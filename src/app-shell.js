@@ -1,6 +1,9 @@
 import { LitElement, html } from 'lit-element';
 
-import('./main-stage.js');
+// ui5 components need the i18n stuff before they start.
+import('./configs/ui5Init.js').then(async () => {
+  import('./main-stage.js');
+});
 
 /**
  * `main-app`

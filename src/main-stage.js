@@ -1,6 +1,9 @@
 import { LitElement, html } from 'lit-element';
 import { FBP } from '@furo/fbp/src/fbp.js';
 
+import '@furo/ui5/src/furo-ui5-card.js';
+import '@furo/ui5/src/furo-ui5-button.js';
+
 /**
  * `main-stage`
  *
@@ -28,7 +31,16 @@ class MainStage extends FBP(LitElement) {
    */
   render() {
     // language=HTML
-    return html` <button @-click="--btnClicked">Hello Furo!</button> `;
+    return html`
+      <furo-ui5-card
+        heading="FURO webclient getting started"
+        subheading="branch:feature/ui5-integration"
+      >
+        <furo-ui5-button slot="action" design="Emphasized" @-click="--btnClicked"
+          >Hello Furo Ui5!</furo-ui5-button
+        >
+      </furo-ui5-card>
+    `;
   }
 }
 
