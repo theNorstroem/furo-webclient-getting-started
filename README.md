@@ -1,4 +1,6 @@
-# FURO Web Client Getting Started
+# FURO Web Client Getting Started // Basic Setup
+
+branch: feature/basic-setup
 
 FURO is a modular open source web stack based on web standard technologies. FURO is not a framework, but rather an assemblage of various standard technologies. 
 
