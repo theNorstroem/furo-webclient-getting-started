@@ -14,6 +14,7 @@ Branches:
 - main
 - feature/basic-setup
 - feature/ui5-integration
+- feature/sap-fiori-floorplan-one
 
 ## How to run
 1. Install the NPM module(s)
@@ -30,3 +31,7 @@ In this branch we have replaced the standard HTML button with the ui5 button and
 > https://sap.github.io/ui5-webcomponents/
 
 By the way, FURO offers SAP's web component library (UI5) in the @furo/ui5 package.
+
+## Step 3 - Integration of the SAP Fiori Floorplans
+In this branch we have implemented a simple SAP Fiori dynamic page.
+> https://experience.sap.com/fiori-design-web/floorplan-overview/

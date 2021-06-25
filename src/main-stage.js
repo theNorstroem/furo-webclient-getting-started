@@ -1,8 +1,13 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 import { FBP } from '@furo/fbp/src/fbp.js';
 
-import '@furo/ui5/src/furo-ui5-card.js';
-import '@furo/ui5/src/furo-ui5-button.js';
+import '@furo/route/src/furo-location.js';
+import '@furo/route/src/furo-pages.js';
+
+import './configs/iconset.js';
+
+import './home/view-homepage.js';
+import './view-404.js';
 
 /**
  * `main-stage`
@@ -16,13 +21,32 @@ class MainStage extends FBP(LitElement) {
    */
   _FBPReady() {
     super._FBPReady();
+  }
 
-    /**
-     * furo flow based wire hook
-     */
-    this._FBPAddWireHook('--btnClicked', () => {
-      window.alert('Congratulation! Furo flow based programming is active.');
-    });
+  /**
+   *
+   * @private
+   * @return {CSSResult}
+   */
+  static get styles() {
+    // language=CSS
+    return [
+      css`
+        :host {
+          height: 100%;
+          display: block;
+          background: var(--sapBackgroundColor);
+          color: var(--sapTextColor);
+          font-family: var(--sapFontFamily, '72'), '72full', Arial, Helvetica, sans-serif;
+          font-size: var(--sapFontSize);
+        }
+
+        furo-pages {
+          height: 100vh;
+          overflow: hidden;
+        }
+      `,
+    ];
   }
 
   /**
@@ -32,14 +56,17 @@ class MainStage extends FBP(LitElement) {
   render() {
     // language=HTML
     return html`
-      <furo-ui5-card
-        heading="FURO webclient getting started"
-        subheading="branch:feature/ui5-integration"
-      >
-        <furo-ui5-button slot="action" design="Emphasized" @-click="--btnClicked"
-          >Hello Furo Ui5!</furo-ui5-button
-        >
-      </furo-ui5-card>
+      <furo-pages ƒ-inject-location="--locationChanged" default="home">
+        <!-- Page HOME - gives you broad overview of your current work situation (default page) -->
+        <view-homepage name="home"></view-homepage>
+        <!-- Page NOT FOUND  - fallback page if the requested page is not available -->
+        <view-404 name="404"></view-404>
+      </furo-pages>
+
+      <furo-location
+        url-space-regex="^${window.APPROOT}"
+        @-location-changed="--locationChanged"
+      ></furo-location>
     `;
   }
 }
