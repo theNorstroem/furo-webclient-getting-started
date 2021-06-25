@@ -14,6 +14,7 @@ Branches:
 - main
 - feature/basic-setup
 - feature/ui5-integration
+- feature/sap-fiori-floorplan-one
 
 ## How to run
 1. Install the NPM module(s)
