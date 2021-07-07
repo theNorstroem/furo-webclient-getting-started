@@ -1,14 +1,14 @@
-# FURO Web Client Getting Started
+# FURO Web Getting Started
 
 branch: main
 
-FURO is a modular open source web stack based on web standard technologies. FURO is not a framework, but rather an assemblage of various standard technologies. 
+Enterprise ready set of web components which work best with [Eclipse Furo](https://github.com/eclipse/eclipsefuro). Comes with minimal footprint. Based on web standards. Future proved. Compliant with any technology of choice. 
 
 - https://furo.pro/
-- https://github.com/theNorstroem/FuroBaseComponents
+- https://github.com/eclipse/eclipsefuro-web
 
 ## General information
-The Getting-Started Repository is a step-by-step guide to FURO. The individual steps are divided into branches.
+The Getting-Started Repository is a step-by-step guide to FURO Web. The individual steps are divided into branches.
 
 Branches:
 - main
